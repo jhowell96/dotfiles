@@ -3,7 +3,6 @@ cask_args appdir: '/Applications'
 tap 'homebrew/bundle'
 tap 'puma/puma'
 
-<<<<<<< HEAD
 brew 'ack'
 brew 'coreutils'
 brew 'go'
@@ -23,7 +22,6 @@ brew 'rbenv'
 brew 'roundup'
 brew 'spaceman-diff'
 brew 'spark'
-=======
 # brew 'cloudflared'
 # brew 'imagemagick'
 brew 'postgresql@14'
@@ -32,7 +30,6 @@ brew 'redis'
 # brew 'spaceman-diff'
 # brew 'spark'
 brew 'stripe/stripe-cli/stripe'
->>>>>>> f4a70c2 (initial commit)
 brew 'wget'
 # brew 'yt-dlp'
 
@@ -61,8 +58,6 @@ cask 'transmission'
 cask 'whatsapp'
 cask 'visual-studio-code'
 cask 'vlc'
-<<<<<<< HEAD
-=======
 # cask 'zed'
 # Install GnuPG to enable PGP-signing commits.
 brew install gnupg
@@ -96,6 +91,19 @@ brew install tree
 brew install vbindiff
 brew install zopfli
 
+brew install openvpn
+brew install slack
+brew install google-chrome
+brew install android-file-transfer
+brew install postman
+brew install android-studio
+brew install drawio
+brew install docker
+brew install dbeaver-community
+brew install figma
+brew install flux
+brew install iterm2
+brew install notion
+
 # Remove outdated versions from the cellar.
 brew cleanup
->>>>>>> f4a70c2 (initial commit)

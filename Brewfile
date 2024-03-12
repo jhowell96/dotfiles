@@ -104,6 +104,7 @@ brew install notion
 brew install minikube
 brew install jupyter
 brew install thunderbird
+# TODO: how to autoconfig emails?
 
 # Remove outdated versions from the cellar.
 brew cleanup

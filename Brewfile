@@ -104,6 +104,8 @@ brew install figma
 brew install flux
 brew install iterm2
 brew install notion
+brew install minikube
+brew install jupyter
 
 # Remove outdated versions from the cellar.
 brew cleanup

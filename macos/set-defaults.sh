@@ -812,6 +812,14 @@ defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
 # Randomize port on launch
 defaults write org.m0k.transmission RandomPort -bool true
 
+# set control centre items + restart
+defaults write com.apple.controlcenter menuExtras -array-add "com.apple.controlcenter.Bluetooth"
+defaults write com.apple.controlcenter menuExtras -array-add "com.apple.controlcenter.Wi-Fi"
+defaults write com.apple.controlcenter menuExtras -array-add "com.apple.controlcenter.Battery"
+defaults write com.apple.controlcenter menuExtras -array-add "com.apple.controlcenter.TimeMachine"
+defaults write com.apple.controlcenter menuExtras -array-add "com.apple.controlcenter.Volume"
+defaults write com.apple.controlcenter menuExtras -array-add "com.apple.controlcenter.Media"
+killall ControlCenter
 
 
 ###############################################################################

@@ -2,8 +2,12 @@
 
 alias pip=pip3
 alias python=python3
-
 TODO: Do we want to keep .vscode extensions? they are large files
+alias kubectl="kubecolor"
+export PATH=$PATH:~/x/x_kctl/x_kctl
+oh-my-zsh
+minikube, jupyter
+do git cli login etc
 
 I was a little tired of having long alias files and everything strewn about
 (which is extremely common on other dotfiles projects, too). That led to this

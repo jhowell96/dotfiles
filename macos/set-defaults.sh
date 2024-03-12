@@ -74,6 +74,11 @@ defaults write com.apple.CrashReporter DialogType -string "none"
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+# Increase Mouse Speed
+defaults write -g com.apple.mouse.scaling 5
+# Trackpad Tracking Speed: from 0 to 3
+defaults write -g com.apple.trackpad.scaling -float 3
+
 
 # Trackpad: map bottom right corner to right-click
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2

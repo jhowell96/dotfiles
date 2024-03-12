@@ -1,0 +1,1 @@
+self.__NEXT_FONT_MANIFEST='{"pages":{},"app":{"/Users/danipower/Proyectos/Node/vscode-blog/codegpt-nextjs/app/layout":["static/media/3e3cf2ee9aa3f174-s.p.woff2"]},"appUsingSizeAdjust":true,"pagesUsingSizeAdjust":false}';

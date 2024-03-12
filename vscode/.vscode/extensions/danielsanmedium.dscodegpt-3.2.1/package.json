@@ -1,0 +1,358 @@
+{
+	"name": "dscodegpt",
+	"displayName": "Code GPT: Chat & AI Agents",
+	"publisher": "DanielSanMedium",
+	"description": "Easily Connect to Top AI Providers Using Their Official APIs in VSCode",
+	"license": "MIT",
+	"icon": "logo_codegpt.png",
+	"version": "3.2.1",
+	"engines": {
+		"vscode": "^1.82.0",
+		"node": ">=18.0.0"
+	},
+	"categories": [
+		"Data Science",
+		"Machine Learning",
+		"Programming Languages",
+		"Testing",
+		"Linters",
+		"Formatters",
+		"Education"
+	],
+	"keywords": [
+		"chatgpt",
+		"codegpt",
+		"copilot",
+		"openai",
+		"ai",
+		"llama",
+		"gpt",
+		"codellama",
+		"react"
+	],
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"main": "./dist/extension.js",
+	"contributes": {
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "codegpt-sidebar-view",
+					"title": "CodeGPT Chat",
+					"icon": "media/code_gpt_bar.svg"
+				}
+			]
+		},
+		"views": {
+			"codegpt-sidebar-view": [
+				{
+					"type": "webview",
+					"id": "codegpt-sidebar",
+					"name": "CodeGPT Chat",
+					"icon": "media/code_gpt_bar.svg",
+					"contextualTitle": "CodeGPT Chat"
+				}
+			]
+		},
+		"configuration": [
+			{
+				"title": "CodeGPT",
+				"properties": {
+					"CodeGPT.apiKey": {
+						"type": "string",
+						"default": "CodeGPT Plus Beta",
+						"markdownDescription": "Select an AI provider and enter your [API Key](https://beta.openai.com/account/api-keys) press cmd+shift+p (mac) ctrl+shift+p (windows) and search for 'CodeGPT: Set API KEY'. Select your AI provider:",
+						"enum": [
+							"CodeGPT Plus",
+							"CodeGPT Plus Beta",
+							"OpenAI",
+							"Vertex",
+							"Google AI Studio",
+							"Cohere",
+							"AI21",
+							"Anthropic",
+							"GPT4All",
+							"HuggingFace",
+							"Azure",
+							"Ollama",
+							"Fireworks AI",
+							"Mistral",
+							"Custom",
+							"Bedrock",
+							"Perplexity",
+							"LM Studio"
+						]
+					},
+					"CodeGPT.query.language": {
+						"type": "string",
+						"default": "English",
+						"markdownDescription": "Select the query language",
+						"enum": [
+							"Arabic",
+							"Chinese",
+							"English",
+							"French",
+							"German",
+							"Hebrew",
+							"Italian",
+							"Japanese",
+							"Korean",
+							"Polish",
+							"Portuguese",
+							"Russian",
+							"Spanish",
+							"Thai",
+							"Turkish",
+							"Ukrainian"
+						]
+					}
+				}
+			},
+			{
+				"title": "CodeGPT Autocomplete",
+				"properties": {
+					"CodeGPT.Autocomplete.enabled": {
+						"type": "boolean",
+						"default": false,
+						"description": "Enable CodeGPT Copilot"
+					},
+					"CodeGPT.Autocomplete.provider": {
+						"type": "string",
+						"default": "OpenAI - gpt-3.5-turbo-instruct",
+						"description": "Select an AI provider for CodeGPT Autocomplete. Remember to set your API Key in the main settings.",
+						"enum": [
+							"OpenAI - gpt-3.5-turbo-instruct",
+							"CodeGPT Plus - Plus",
+							"Anthropic - claude-2",
+							"Anthropic - claude-instant-1",
+							"Ollama - deepseek-coder:base",
+							"Ollama - codegpt/deepseek-coder-1.3b-typescript"
+						]
+					},
+					"CodeGPT.Autocomplete.maxTokens": {
+						"type": "number",
+						"default": 500,
+						"description": "The maximum number of tokens to generate. The model will stop once this many tokens have been generated, so this value trades off between latency and coherence."
+					},
+					"CodeGPT.Autocomplete.suggestionDelay": {
+						"type": "number",
+						"default": 3000,
+						"description": "The delay in milliseconds between the last character typed and the request for suggestions."
+					}
+				}
+			}
+		],
+		"commands": [
+			{
+				"command": "notifications-sample.showInfo",
+				"title": "Show Info Notification",
+				"category": "Notifications"
+			},
+			{
+				"command": "notifications-sample.showNextError",
+				"title": "Show Error Notification",
+				"category": "Notifications"
+			},
+			{
+				"command": "codegpt.askStackOverflow",
+				"title": "CodeGPT: Ask StackOverflow CodeGPT"
+			},
+			{
+				"command": "codegpt.searchApisCodeGPT",
+				"title": "CodeGPT: Search APIs CodeGPT"
+			},
+			{
+				"command": "codegpt.explainCodeGPT",
+				"title": "CodeGPT: Explain CodeGPT"
+			},
+			{
+				"command": "codegpt.refactorCodeGPT",
+				"title": "CodeGPT: Refactor CodeGPT"
+			},
+			{
+				"command": "codegpt.documentCodeGPT",
+				"title": "CodeGPT: Document CodeGPT"
+			},
+			{
+				"command": "codegpt.findProblemsCodeGPT",
+				"title": "CodeGPT: Find Problems CodeGPT"
+			},
+			{
+				"command": "codegpt.unitTestCodeGPT",
+				"title": "CodeGPT: Unit Test"
+			},
+			{
+				"command": "codegpt.runJupyterNotebook",
+				"title": "CodeGPT: Run Code Interpreter (Python)"
+			},
+			{
+				"command": "codegpt.getCode",
+				"title": "CodeGPT: Get Code from comments"
+			},
+			{
+				"command": "codegpt.signInChatCodeGPT",
+				"title": "Sign In",
+				"icon": "$(sign-in)"
+			},
+			{
+				"command": "codegpt.signUpCodeGPT",
+				"title": "Sign Up",
+				"icon": "$(person-add)"
+			},
+			{
+				"command": "codegpt.connectChatCodeGPT",
+				"title": "Connect",
+				"icon": "$(account)"
+			},
+			{
+				"command": "codegpt.aboutCodeGPT",
+				"title": "CodeGPT: About",
+				"icon": "$(notebook)"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "codegpt.getCode",
+				"key": "ctrl+shift+i",
+				"mac": "cmd+shift+i"
+			}
+		],
+		"menus": {
+			"view/title": [
+				{
+					"submenu": "codegpt.connect",
+					"when": "view == codegpt-sidebar",
+					"group": "navigation@6"
+				},
+				{
+					"command": "codegpt.aboutCodeGPT",
+					"when": "view == codegpt-sidebar",
+					"group": "navigation@3"
+				}
+			],
+			"codegpt.connect": [
+				{
+					"command": "codegpt.signInChatCodeGPT",
+					"group": "navigation@1"
+				},
+				{
+					"command": "codegpt.signUpCodeGPT",
+					"group": "navigation@2"
+				}
+			],
+			"editor/context": [
+				{
+					"command": "codegpt.explainCodeGPT",
+					"when": "editorHasSelection",
+					"group": "codegpt-menu-group@3"
+				},
+				{
+					"command": "codegpt.refactorCodeGPT",
+					"when": "editorHasSelection",
+					"group": "codegpt-menu-group@4"
+				},
+				{
+					"command": "codegpt.documentCodeGPT",
+					"when": "editorHasSelection",
+					"group": "codegpt-menu-group@5"
+				},
+				{
+					"command": "codegpt.findProblemsCodeGPT",
+					"when": "editorHasSelection",
+					"group": "codegpt-menu-group@6"
+				},
+				{
+					"command": "codegpt.unitTestCodeGPT",
+					"when": "editorHasSelection",
+					"group": "codegpt-menu-group@7"
+				}
+			],
+			"commandPalette": [
+				{
+					"command": "codegpt.explainCodeGPT",
+					"when": "editorHasSelection"
+				},
+				{
+					"command": "codegpt.refactorCodeGPT",
+					"when": "editorHasSelection"
+				},
+				{
+					"command": "codegpt.documentCodeGPT",
+					"when": "editorHasSelection"
+				},
+				{
+					"command": "codegpt.findProblemsCodeGPT",
+					"when": "editorHasSelection"
+				},
+				{
+					"command": "codegpt.unitTestCodeGPT",
+					"when": "editorHasSelection"
+				},
+				{
+					"command": "codegpt.runJupyterNotebook",
+					"when": "editorHasSelection"
+				}
+			]
+		},
+		"submenus": [
+			{
+				"id": "codegpt.connect",
+				"label": "CodeGPT: Connect",
+				"icon": "$(account)"
+			}
+		]
+	},
+	"scripts": {
+		"lint": "eslint . --fix",
+		"pretest": "npm run lint",
+		"build": "node build.js",
+		"vscode:prepublish": "npm run build",
+		"vscode:package": "npx vsce package",
+		"vscode:publish": "npx vsce publish",
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^8.0.0",
+		"@types/mocha": "^10.0.1",
+		"@types/node": "^18.19.4",
+		"@types/vscode": "^1.82.0",
+		"@vscode/test-electron": "^2.2.0",
+		"esbuild": "^0.19.4",
+		"eslint": "^8.35.0",
+		"eslint-config-standard": "^17.0.0",
+		"eslint-plugin-import": "^2.27.5",
+		"eslint-plugin-n": "^15.6.1",
+		"eslint-plugin-promise": "^6.1.1",
+		"glob": "^8.0.3",
+		"mocha": "^10.1.0",
+		"typescript": "^4.9.3"
+	},
+	"dependencies": {
+		"axios": "^1.6.4",
+		"body-parser": "^1.20.2",
+		"cheerio": "^1.0.0-rc.12",
+		"cohere-ai": "^5.1.0",
+		"gpt-tokenizer": "^2.1.2",
+		"openai": "^3.3.0",
+		"polka": "^0.5.2",
+		"portfinder": "^1.0.32",
+		"uuid": "^9.0.1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/davila7/code-gpt-docs"
+	},
+	"__metadata": {
+		"id": "eb8db386-b7d8-4961-8048-b188d778a1e9",
+		"publisherId": "32ffcc9f-7414-49c5-8252-14fb6374a4f1",
+		"publisherDisplayName": "Code GPT",
+		"targetPlatform": "undefined",
+		"isApplicationScoped": false,
+		"updated": true,
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1709543982163,
+		"pinned": false,
+		"preRelease": false
+	}
+}

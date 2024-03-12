@@ -1,5 +1,7 @@
 # dotfiles
 
+alias pip=pip3
+alias python=python3
 
 I was a little tired of having long alias files and everything strewn about
 (which is extremely common on other dotfiles projects, too). That led to this

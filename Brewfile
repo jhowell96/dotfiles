@@ -37,7 +37,6 @@ brew 'wget'
 # cask 'arq'
 # cask 'handbrake'
 # cask 'messenger'
-<<<<<<< HEAD
 cask 'notion-calendar'
 cask 'plex'
 cask '1password'
@@ -47,8 +46,6 @@ cask 'garmin-express'
 cask 'google-chrome'
 cask 'handbrake'
 cask 'messenger'
-=======
->>>>>>> f4a70c2 (initial commit)
 cask 'notion-calendar'
 cask 'plex'
 # cask 'sonos'
@@ -106,6 +103,7 @@ brew install iterm2
 brew install notion
 brew install minikube
 brew install jupyter
+brew install thunderbird
 
 # Remove outdated versions from the cellar.
 brew cleanup

@@ -1,5 +1,7 @@
 # dotfiles
 
+make sure autocomplete works well and completions are installed for all common apps
+
 alias pip=pip3
 alias python=python3
 TODO: Do we want to keep .vscode extensions? they are large files

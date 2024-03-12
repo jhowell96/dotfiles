@@ -3,6 +3,8 @@
 alias pip=pip3
 alias python=python3
 
+TODO: Do we want to keep .vscode extensions? they are large files
+
 I was a little tired of having long alias files and everything strewn about
 (which is extremely common on other dotfiles projects, too). That led to this
 project being much more topic-centric. I realized I could split a lot of things
